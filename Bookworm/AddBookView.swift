@@ -19,7 +19,7 @@ struct AddBookView: View {
 	@State private var genre = ""
 	@State private var review = ""
 	
-	private var formIsValid: Bool {
+	private var isValid: Bool {
 		if title.isEmpty || author.isEmpty || genre.isEmpty {
 			return false
 		}
@@ -63,7 +63,7 @@ struct AddBookView: View {
 						self.presentationMode.wrappedValue.dismiss()
 						
 					}
-					.disabled(formIsValid == false)
+					.disabled(isValid == false)
 				}
 			}
 		.navigationBarTitle("Add book")
