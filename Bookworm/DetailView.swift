@@ -17,6 +17,16 @@ struct DetailView: View {
 	
 	let book: Book
 	
+	var formattedDate: String {
+		if let date = book.date {
+			let formatter = DateFormatter()
+			formatter.dateStyle = .long
+			return formatter.string(from: date)
+		} else {
+			return "Unknown Date"
+		}
+	}
+	
 	var body: some View {
 		GeometryReader { geometry in
 			VStack {
