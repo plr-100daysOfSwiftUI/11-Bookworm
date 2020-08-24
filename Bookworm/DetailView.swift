@@ -54,6 +54,10 @@ struct DetailView: View {
 				RatingView(rating: .constant(Int(self.book.rating)))
 					.font(.largeTitle)
 				
+				Text(self.formattedDate)
+					.font(.subheadline)
+					.padding()
+				
 				Spacer()
 			}
 		}
@@ -76,6 +80,7 @@ struct DetailView: View {
 		try? moc.save()
 		presentationMode.wrappedValue.dismiss()
 	}
+		
 }
 
 struct DetailView_Previews: PreviewProvider {
