@@ -20,7 +20,7 @@ struct AddBookView: View {
 	@State private var review = ""
 	
 	private var formIsValid: Bool {
-		if genre.isEmpty {
+		if title.isEmpty || author.isEmpty || genre.isEmpty {
 			return false
 		}
 		return true
